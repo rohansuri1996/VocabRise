@@ -1,0 +1,175 @@
+/* General body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Container styles */
+.container {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading styles */
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #00796b;
+}
+
+/* Button styles */
+button {
+    background-color: #00796b;
+    border: none;
+    color: #fff;
+    padding: 14px 28px;
+    margin: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: #b2dfdb;
+}
+
+/* Options buttons styles */
+#options button {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Correct answer feedback */
+button.correct {
+    background-color: #43a047; /* Green */
+    color: #fff;
+    animation: correctAnswer 0.5s ease-out;
+}
+
+/* Incorrect answer feedback */
+button.incorrect {
+    background-color: #e53935; /* Red */
+    color: #fff;
+    animation: incorrectAnswer 0.5s ease-out;
+}
+
+/* Score and remaining questions styles */
+#score, #remaining {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #00796b;
+}
+
+/* Restart and Back buttons styles */
+#restart, #back {
+    background-color: #004d40;
+}
+
+#restart:hover, #back:hover {
+    background-color: #003d33;
+}
+
+/* Progress bar styles */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background-color: #00796b;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Timer styles */
+#timer {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #00796b;
+}
+
+/* Donation button styles */
+.donation-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.donation-container form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes correctAnswer {
+    from {
+        background-color: #43a047;
+    }
+    to {
+        background-color: #388e3c;
+    }
+}
+
+@keyframes incorrectAnswer {
+    from {
+        background-color: #e53935;
+    }
+    to {
+        background-color: #d32f2f;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
